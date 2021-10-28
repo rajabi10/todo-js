@@ -50,6 +50,32 @@ function deleteCompleteTodo(event) {
   }
 }
 
+//filter function that can filter completed and uncompleted todos
+function filterTodo(event) {
+  const todo = todoList.childNodes;
+  todo.forEach(function (todo) {
+    switch (event.target.value) {
+      case "All":
+        todo.style.display = "flex";
+        break;
+      case "completed":
+        if (todo.classList.contains("completed")) {
+          todo.style.display = "flex";
+        } else {
+          todo.style.display = "flex";
+        }
+        break;
+      case "uncompleted":
+        if (todo.classList.contains("completed")) {
+          todo.style.display = "flex";
+        } else {
+          todo.style.display = "flex";
+        }
+        break;
+    }
+  });
+}
+
 //save to localStorage
 function saveLocalTodo(todo) {
   let todos;
