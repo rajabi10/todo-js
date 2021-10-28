@@ -62,12 +62,12 @@ function filterTodo(event) {
         if (todo.classList.contains("completed")) {
           todo.style.display = "flex";
         } else {
-          todo.style.display = "flex";
+          todo.style.display = "none";
         }
         break;
       case "uncompleted":
         if (todo.classList.contains("completed")) {
-          todo.style.display = "flex";
+          todo.style.display = "none";
         } else {
           todo.style.display = "flex";
         }
