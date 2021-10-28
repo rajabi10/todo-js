@@ -112,6 +112,9 @@ form button:hover {
   opacity: 0.5;
 }
 
+.todo-item {
+  padding: 0rem 0.5rem;
+}
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
