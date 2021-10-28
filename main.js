@@ -49,3 +49,28 @@ function deleteCompleteTodo(event) {
       todo.classList.toggle("completed")
   }
 }
+
+//save to localStorage
+function saveLocalTodo(todo) {
+    let todos;
+    if (localStorage.getItem("todos") === null) {
+      todos = [];
+    } else {
+      todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    todos.push(todo);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
+  
+  //remove from localStorage
+  function removeLocalTodo(todo) {
+    let todos;
+    if (localStorage.getItem("todos") === null) {
+      todos = [];
+    } else {
+      todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    const todoIndex = todo.children[0].innerText;
+    todos.splice(todos.indexOf(todoIndex), 1);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
