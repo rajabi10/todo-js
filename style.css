@@ -34,7 +34,7 @@ form button {
     -1px -1px 5px rgb(175, 174, 174);
 }
 
-i {
+.fa-plus-square {
   color: rgb(5, 99, 99);
 }
 
@@ -87,6 +87,7 @@ form button:hover {
 
 .trash-btn {
   background: rgb(17, 18, 19);
+  box-shadow: inset -3px -3px 3px rgb(17, 16, 17);
   color: red;
   border: none;
   padding: 1rem;
@@ -96,7 +97,8 @@ form button:hover {
 
 .complete-btn {
   background: rgb(17, 18, 19);
-  color: rgb(5, 99, 99);
+  box-shadow: inset -3px -3px 3px rgb(17, 16, 17);
+  color:rgb(5, 99, 99) ;
   border: none;
   padding: 1rem;
   cursor: pointer;
