@@ -4,9 +4,9 @@ const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 
 todobutton.addEventListener("click", addTodo);
-// todoList.addEventListener("click", deleteCompleteTodo);
-// filterOption.addEventListener("click", filterTodo);
-// document.addEventListener("DOMContentLoaded", getTodos);
+todoList.addEventListener("click", deleteCompleteTodo);
+filterOption.addEventListener("click", filterTodo);
+document.addEventListener("DOMContentLoaded", getTodos);
 
 //create todo list and save it to localStorage
 function addTodo(event) {
@@ -17,6 +17,7 @@ function addTodo(event) {
 
   const newTodo = document.createElement("li");
   newTodo.innerText = input.value;
+  saveLocalTodo(newTodo)
   newTodo.classList.add("todo-item");
 
   todoDiv.appendChild(newTodo);
@@ -29,7 +30,22 @@ function addTodo(event) {
   const deletebtn = document.createElement("button");
   deletebtn.innerHTML = "<i class= 'fas fa-trash'></i>";
   deletebtn.classList.add("trash-btn");
-  todoDiv.appendChild(deletebtn)
+  todoDiv.appendChild(deletebtn);
 
- todoList.appendChild(todoDiv) 
+  todoList.appendChild(todoDiv);
+}
+
+// delete and complete todo and remove from localStorage
+function deleteCompleteTodo(event) {
+    console.log(event.target);
+  const item = event.target;
+  if (item.classList[0] === "trash-btn") {
+    const todo = item.parentElement;
+    removeLocalTodo(todo)
+    todo.remove();
+  }
+  if (item.classList[0] === "complete-btn"){
+      const todo = item.parentElement;
+      todo.classList.toggle("completed")
+  }
 }
